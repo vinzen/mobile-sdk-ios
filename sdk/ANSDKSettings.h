@@ -26,4 +26,8 @@
  */
 @property (nonatomic) BOOL HTTPSEnabled;
 
+/**
+  Specifies a string that corresponds to an external user ID for this user
+ */
+@property (nonatomic, nullable) NSString *externalUid;
 @end

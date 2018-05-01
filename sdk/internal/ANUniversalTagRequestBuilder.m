@@ -23,7 +23,7 @@
 #import "ANUniversalAdFetcher.h"
 #import "ANAdViewInternalDelegate.h"
 #import "ANGDPRSettings.h"
-
+#import "ANSDKSettings.h"
 
 
 @interface ANUniversalTagRequestBuilder()
@@ -279,6 +279,11 @@
     NSString *language = [NSLocale preferredLanguages][0];
     if (language.length) {
         userDict[@"language"] = language;
+    }
+    
+    if ([[ANSDKSettings sharedInstance] externalUid] != nil) {
+        NSString *externalUid = [[ANSDKSettings sharedInstance] externalUid];
+        userDict[@"externalUid"] = externalUid;
     }
     
     return [userDict copy];
