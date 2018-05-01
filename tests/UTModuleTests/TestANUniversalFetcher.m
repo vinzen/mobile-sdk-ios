@@ -14,6 +14,7 @@
  */
 
 #import "TestANUniversalFetcher.h"
+#import "ANSDKSettings.h"
 
 @implementation TestANUniversalFetcher
 
@@ -23,7 +24,8 @@
 {
     self = [super init];
     if (!self)  { return nil; }
-
+    
+    [[ANSDKSettings sharedInstance] setExternalUid:@"AppNexus"];
     self.placementId     = placementId;
     self.allowedAdSizes  = [[NSMutableSet alloc] initWithArray:@[ [NSValue valueWithCGSize:kANAdSize1x1] ]];
 

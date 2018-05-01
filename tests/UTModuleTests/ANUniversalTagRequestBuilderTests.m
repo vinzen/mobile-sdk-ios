@@ -116,6 +116,10 @@ static NSString  *videoPlacementID  = @"9924001";
         NSNumber *gender = user[@"gender"];
         XCTAssertNotNil(gender);
 
+        // User
+        NSString *externalUid = user[@"externalUid"];
+        XCTAssertNotNil(externalUid);
+        XCTAssertEqualObjects(externalUid, @"AppNexus");
         NSString * deviceLanguage = [[NSLocale preferredLanguages] firstObject];
         NSString *language = user[@"language"];
         XCTAssertEqualObjects(language, deviceLanguage);
