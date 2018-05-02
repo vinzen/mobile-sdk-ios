@@ -66,8 +66,9 @@
     NSMutableURLRequest  *mutableRequest  = [[NSMutableURLRequest alloc] initWithURL: URL
                                                                          cachePolicy: NSURLRequestReloadIgnoringLocalCacheData
                                                                      timeoutInterval: kAppNexusRequestTimeoutInterval];
-    
-    [mutableRequest setValue:ANUserAgent() forHTTPHeaderField:@"User-Agent"];
+
+
+    [mutableRequest setValue:[ANGlobal getUserAgent] forHTTPHeaderField:@"User-Agent"];
     //needs to be set explicity else will default to "application/x-www-form-urlencoded"
     [mutableRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [mutableRequest setHTTPMethod:@"POST"];
@@ -294,7 +295,7 @@
 - (NSDictionary *)device {
     NSMutableDictionary *deviceDict = [[NSMutableDictionary alloc] init];
     
-    NSString *userAgent = ANUserAgent();
+    NSString *userAgent = [ANGlobal getUserAgent];
     if (userAgent) {
         deviceDict[@"useragent"] = userAgent;
     }
