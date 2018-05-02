@@ -283,7 +283,7 @@
     
     
     
-    NSString *externalUid = [[ANSDKSettings sharedInstance] externalUid];
+    NSString *externalUid = [self.adFetcherDelegate externalUid];
     if (externalUid) {
         userDict[@"externalUid"] = externalUid;
     }
