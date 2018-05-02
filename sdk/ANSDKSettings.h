@@ -29,5 +29,5 @@
 /**
   Specifies a string that corresponds to an external user ID for  user
  */
-@property (nonatomic, nullable) NSString *externalUid;
+@property (nonatomic, nullable, strong) NSString *externalUid;
 @end
