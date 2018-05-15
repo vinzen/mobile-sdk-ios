@@ -152,6 +152,12 @@
 - (void)handleClick {
     [self adWasClicked];
     [self fireClickTrackers];
+
+    if (self.returnClickThroughURL) {
+        ANLogMarkMessage(@"RETURN WITH URL=%@", self.clickURL);
+        [self adWasClickedWithURLString:[self.clickURL absoluteString]];
+        return;
+    }
     
     BOOL successfullyOpenedBrowserWithClickURL = [self openIntendedBrowserWithURL:self.clickURL];
     if (!successfullyOpenedBrowserWithClickURL) {

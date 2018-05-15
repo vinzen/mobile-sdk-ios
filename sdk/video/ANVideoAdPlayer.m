@@ -32,8 +32,10 @@
     @property (nonatomic, assign)             NSUInteger                videoDuration;
     @property (nonatomic, strong)             NSString                  *vastURLContent;
     @property (nonatomic, strong)             NSString                  *vastXMLContent;
+
     @property (nonatomic, readonly)  BOOL  opensInNativeBrowser;
     @property (nonatomic, readonly)  BOOL  landingPageLoadsInBackground;
+    @property (nonatomic, readonly)  BOOL  returnClickThroughURL;
 
 @end
 
@@ -99,6 +101,19 @@
 
     return  returnVal;
 }
+
+- (BOOL) returnClickThroughURL
+{
+    BOOL  returnVal  = NO;
+
+    if ([self.delegate respondsToSelector:@selector(videoAdPlayerReturnClickThroughURL)])  {
+        returnVal = [self.delegate videoAdPlayerReturnClickThroughURL];
+    }
+
+    return  returnVal;
+}
+
+
 
 
 #pragma mark - Public methods.
