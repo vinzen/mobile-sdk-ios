@@ -320,6 +320,12 @@
 
 
 
+- (BOOL)returnClickThroughURL {
+    ANLogDebug(@"returnClickThroughURL returned %d", __returnClickThroughURL);
+    return __returnClickThroughURL;
+}
+
+
 
 #pragma mark - ANUniversalAdFetcherDelegate -- abstract methods.
 
