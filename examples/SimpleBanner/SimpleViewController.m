@@ -60,6 +60,7 @@
     
     [self locationSetup]; // If you want to pass location...
     self.banner = banner;
+    self.banner.returnClickThroughURL = YES;
 }
 
 - (void)locationSetup {
@@ -93,6 +94,11 @@
 
 - (void)adWasClicked:(id<ANAdProtocol>)ad {
     NSLog(@"Ad was clicked");
+}
+
+- (void)adWasClicked:(id<ANAdProtocol>)ad withURLString:(NSString *)urlString
+{
+    NSLog(@"Ad was clicked WITH URL=%@", urlString);
 }
 
 - (void)ad:(id<ANAdProtocol>)ad requestFailedWithError:(NSError *)error {
