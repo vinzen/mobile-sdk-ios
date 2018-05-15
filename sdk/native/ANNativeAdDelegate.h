@@ -31,6 +31,11 @@
 - (void)adWasClicked:(ANNativeAdResponse *)response;
 
 /*!
+ * Sent when the native view returns the click-through URL to the user instead of opening it in a browser.
+ */
+- (void)adWasClicked:(ANNativeAdResponse *)response withURLString:(NSString *)urlString;
+
+/*!
  * Sent when the native view was clicked, and the click through
  * destination is about to open in the in-app browser.
  *

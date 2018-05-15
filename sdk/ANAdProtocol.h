@@ -147,6 +147,17 @@
 
 @protocol ANAdProtocolBrowser
 
+@optional
+
+/**
+ Determines whether the click-through URL is returned to the calling environment as a string (YES)
+ or whether the URL is displayed with a browser (NO).
+
+ NOTE  Both opensInNativeBrowser and landingPageLoadsInBackground are superceded when this is set to YES.
+ */
+@property (nonatomic, readwrite)  BOOL  returnClickThroughURL;
+
+
 @required
 
 /**
@@ -255,6 +266,11 @@
  Sent when the ad is clicked by the user.
  */
 - (void)adWasClicked:(id<ANAdProtocol>)ad;
+
+/**
+ Sent when the ad is clicked and the click-through URL is returned to the caller instead of being opened in a browser.
+ */
+- (void)adWasClicked:(id<ANAdProtocol>)ad withURLString:(NSString *)urlString;
 
 /**
  Sent when the ad view is about to close.

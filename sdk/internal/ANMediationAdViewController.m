@@ -278,6 +278,13 @@
     }];
 }
 
+- (void)adWasClickedWithURLString:(NSString *)urlString {
+    if (self.hasFailed) return;
+    [self runInBlock:^(void) {
+        [self.adViewDelegate adWasClickedWithURLString:urlString];
+    }];
+}
+
 - (void)willPresentAd {
     if (self.hasFailed) return;
     [self runInBlock:^(void) {
