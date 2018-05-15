@@ -53,17 +53,22 @@
 @synthesize  placementId                            = __placementId;
 @synthesize  memberId                               = __memberId;
 @synthesize  inventoryCode                          = __invCode;
-@synthesize  opensInNativeBrowser                   = __opensInNativeBrowser;
+
 @synthesize  shouldServePublicServiceAnnouncements  = __shouldServePublicServiceAnnouncements;
 @synthesize  location                               = __location;
+
 @synthesize  reserve                                = __reserve;
 @synthesize  age                                    = __age;
 @synthesize  gender                                 = __gender;
-@synthesize  landingPageLoadsInBackground           = __landingPageLoadsInBackground;
 @synthesize  customKeywords                         = __customKeywords;
+
 @synthesize  creativeId                             = __creativeId;
 @synthesize  adType                                 = __adType;
 @synthesize  externalUid                                 = __externalUid;
+
+@synthesize  opensInNativeBrowser                   = __opensInNativeBrowser;
+@synthesize  landingPageLoadsInBackground           = __landingPageLoadsInBackground;
+@synthesize  returnClickThroughURL                  = __returnClickThroughURL;
 
 #pragma mark - Initialization
 
@@ -308,6 +313,12 @@
     ANLogDebug(@"ExternalUid returned %@", __externalUid);
     return __externalUid;
 }
+- (BOOL)returnClickThroughURL {
+    ANLogDebug(@"returnClickThroughURL returned %d", __returnClickThroughURL);
+    return __returnClickThroughURL;
+}
+
+
 
 
 #pragma mark - ANUniversalAdFetcherDelegate -- abstract methods.
@@ -350,6 +361,12 @@
 - (void)adWasClicked {
     if ([self.delegate respondsToSelector:@selector(adWasClicked:)]) {
         [self.delegate adWasClicked:self];
+    }
+}
+
+- (void)adWasClickedWithURLString:(NSString *)urlString {
+    if ([self.delegate respondsToSelector:@selector(adWasClicked:withURLString:)]) {
+        [self.delegate adWasClicked:self withURLString:urlString];
     }
 }
 

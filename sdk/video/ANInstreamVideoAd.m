@@ -84,6 +84,7 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
     
     self.landingPageLoadsInBackground = YES;
     self.opensInNativeBrowser = NO;
+    self.returnClickThroughURL = NO;
     
     self.placementId = placementId;
     
@@ -181,7 +182,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
 //---------------------------------------------------------- -o--
 #pragma mark - ANVideoAdPlayerDelegate.
 
-//--------------------- -o-
 -(void) videoAdReady
 {
     self.isVideoTagReady = YES;
@@ -192,7 +192,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
 }
 
 
-//--------------------- -o-
 -(void) videoAdLoadFailed:(NSError *)error
 {
     self.didVideoTagFail = YES;
@@ -208,8 +207,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
     }
 }
 
-
-//--------------------- -o-
 -(void) videoAdPlayFailed:(NSError *)error
 {
     self.didVideoTagFail = YES;
@@ -221,8 +218,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
     [self removeAd];
 }
 
-
-//--------------------- -o-
 - (void) videoAdError:(NSError *)error
 {
     self.descriptionOfFailure  = nil;
@@ -234,7 +229,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
 }
 
 
-//--------------------- -o-
 - (void) videoAdWillPresent:(ANVideoAdPlayer *)videoAd
 {
     if ([self.playDelegate respondsToSelector:@selector(adWillPresent:)]) {
@@ -242,8 +236,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
     }
 }
 
-
-//--------------------- -o-
 - (void) videoAdDidPresent:(ANVideoAdPlayer *)videoAd
 {
     if ([self.playDelegate respondsToSelector:@selector(adDidPresent:)]) {
@@ -252,7 +244,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
 }
 
 
-//--------------------- -o-
 - (void) videoAdWillClose:(ANVideoAdPlayer *)videoAd
 {
     if ([self.playDelegate respondsToSelector:@selector(adWillClose:)]) {
@@ -260,8 +251,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
     }
 }
 
-
-//--------------------- -o-
 - (void) videoAdDidClose:(ANVideoAdPlayer *)videoAd
 {
     if ([self.playDelegate respondsToSelector:@selector(adDidClose:)]) {
@@ -271,7 +260,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
 }
 
 
-//--------------------- -o-
 - (void) videoAdWillLeaveApplication:(ANVideoAdPlayer *)videoAd
 {
     if ([self.playDelegate respondsToSelector:@selector(adWillLeaveApplication:)])  {
@@ -280,7 +268,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
 }
 
 
-//--------------------- -o-
 -(void) videoAdImpressionListeners:(ANVideoAdPlayerTracker)tracker
 {
     switch (tracker) {
@@ -311,7 +298,6 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
 }
 
 
-//--------------------- -o-
 -(void) videoAdEventListeners:(ANVideoAdPlayerEvent)eventTrackers
 {
     switch (eventTrackers) {
@@ -336,6 +322,7 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
                 [self.playDelegate adWasClicked:self];
             }
             break;
+
         case ANVideoAdPlayerEventMuteOn:
             self.isAdMuted = YES;
             
@@ -356,22 +343,24 @@ NSString * const  exceptionCategoryAPIUsageErr  = @"API usage err.";
 }
 
 
-//--------------------- -o-
 - (BOOL) videoAdPlayerOpensInNativeBrowser  {
     return  self.opensInNativeBrowser;
 }
 
-
-//--------------------- -o-
 - (BOOL) videoAdPlayerLandingPageLoadsInBackground  {
     return  self.landingPageLoadsInBackground;
 }
+
+- (BOOL) videoAdPlayerReturnClickThroughURL {
+    return  self.returnClickThroughURL;
+}
+
+
 
 
 //---------------------------------------------------------- -o--
 #pragma mark - ANUniversalAdFetcherDelegate.
 
-//--------------------- -o-
 - (void)       universalAdFetcher: (ANUniversalAdFetcher *)fetcher
      didFinishRequestWithResponse: (ANAdFetcherResponse *)response
 {

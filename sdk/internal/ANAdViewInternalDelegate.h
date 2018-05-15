@@ -22,6 +22,9 @@
 //
 @protocol ANAdViewInternalDelegate <NSObject>
 
+@optional
+- (BOOL)returnClickThroughURL;
+- (void)adWasClickedWithURLString:(NSString *)urlString;
 
 @required
 - (void)adDidReceiveAd;

@@ -58,6 +58,7 @@
 
 @synthesize  opensInNativeBrowser           = _opensInNativeBrowser;
 @synthesize  landingPageLoadsInBackground   = _landingPageLoadsInBackground;
+@synthesize  returnClickThroughURL          = _returnClickThroughURL;
 
 
 
@@ -205,6 +206,12 @@
 - (void)adWasClicked {
     if ([self.delegate respondsToSelector:@selector(adWasClicked:)]) {
         [self.delegate adWasClicked:self];
+    }
+}
+
+- (void)adWasClickedWithURLString:(NSString *)urlString {
+    if ([self.delegate respondsToSelector:@selector(adWasClicked:withURLString:)]) {
+        [self.delegate adWasClicked:self withURLString:urlString];
     }
 }
 

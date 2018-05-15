@@ -409,6 +409,12 @@ typedef NS_OPTIONS(NSUInteger, ANMRAIDContainerViewAdInteraction)
 
     [self.adViewDelegate adWasClicked];
 
+    if ([self.adViewDelegate returnClickThroughURL]) {
+        ANLogMarkMessage(@"RETURN WITH URL=%@", URL);
+        [self.adViewDelegate adWasClickedWithURLString:[URL absoluteString]];
+        return;
+    }
+
     if (![self.adViewDelegate opensInNativeBrowser]) {
         [self openInAppBrowserWithURL:URL];
     }

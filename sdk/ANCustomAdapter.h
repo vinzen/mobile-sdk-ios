@@ -21,6 +21,10 @@
 
 
 @protocol ANCustomAdapterDelegate <NSObject>
+@optional
+- (void)adWasClickedWithURLString:(NSString *)urlString;
+
+@required
 - (void)didFailToLoadAd:(ANAdResponseCode)errorCode;
 - (void)adWasClicked;
 - (void)willPresentAd;

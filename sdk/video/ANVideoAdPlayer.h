@@ -57,6 +57,7 @@ typedef NS_ENUM(NSUInteger, ANVideoAdPlayerEvent) {
 
 - (BOOL) videoAdPlayerLandingPageLoadsInBackground;
 - (BOOL) videoAdPlayerOpensInNativeBrowser;
+- (BOOL) videoAdPlayerReturnClickThroughURL;
 
 - (void) videoAdPlayerFullScreenEntered: (ANVideoAdPlayer *)videoAd;
 - (void) videoAdPlayerFullScreenExited: (ANVideoAdPlayer *)videoAd;

@@ -93,6 +93,9 @@
  */
 @protocol ANNativeCustomAdapterAdDelegate <NSObject>
 
+@optional
+- (void)adWasClickedWithURLString:(NSString *)urlString;
+
 @required
 - (void)adWasClicked;
 - (void)willPresentAd;

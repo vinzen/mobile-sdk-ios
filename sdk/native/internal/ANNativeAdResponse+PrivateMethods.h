@@ -40,6 +40,7 @@
 #pragma mark - ANNativeAdDelegate / ANNativeCustomAdapterAdDelegate
 
 - (void)adWasClicked;
+- (void)adWasClickedWithURLString:(NSString *)urlString;
 - (void)willPresentAd;
 - (void)didPresentAd;
 - (void)willCloseAd;
