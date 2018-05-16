@@ -286,7 +286,7 @@
     
     NSString *externalUid = [self.adFetcherDelegate externalUid];
     if (externalUid) {
-        userDict[@"externalUid"] = externalUid;
+        userDict[@"external_uid"] = externalUid;
     }
     
     return [userDict copy];
