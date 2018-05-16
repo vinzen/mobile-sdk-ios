@@ -50,7 +50,7 @@
         <!--Simple Web View Controller-->
         <scene sceneID="Aed-eF-8RK">
             <objects>
-                <viewController modalPresentationStyle="currentContext" id="fcC-2W-GMw" customClass="SimpleWebViewController" sceneMemberID="viewController">
+                <viewController id="fcC-2W-GMw" customClass="SimpleWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b4b-lr-GJt"/>
                         <viewControllerLayoutGuide type="bottom" id="6AX-Ng-S30"/>
