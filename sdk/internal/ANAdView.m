@@ -70,6 +70,7 @@
 @synthesize  landingPageLoadsInBackground           = __landingPageLoadsInBackground;
 @synthesize  returnClickThroughURL                  = __returnClickThroughURL;
 
+
 #pragma mark - Initialization
 
 - (instancetype)init {
@@ -318,7 +319,6 @@
     ANLogDebug(@"returnClickThroughURL returned %d", __returnClickThroughURL);
     return __returnClickThroughURL;
 }
-
 
 
 #pragma mark - ANUniversalAdFetcherDelegate -- abstract methods.
