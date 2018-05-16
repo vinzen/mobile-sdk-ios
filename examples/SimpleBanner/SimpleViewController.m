@@ -18,11 +18,13 @@
 #import "ANLogManager.h"
 #import <CoreLocation/CoreLocation.h>
 #import "ANLocation.h"
-
+#import "SimpleWebViewController.h"
 @interface SimpleViewController () <ANBannerAdViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, readwrite, strong) CLLocationManager *locationManager;
 @property (nonatomic, readwrite, strong) ANBannerAdView *banner;
+@property (nonatomic, readwrite, strong) NSString *clickThroughURL;
+
 
 @end
 
@@ -99,6 +101,16 @@
 - (void)adWasClicked:(id<ANAdProtocol>)ad withURLString:(NSString *)urlString
 {
     NSLog(@"Ad was clicked WITH URL=%@", urlString);
+    self.clickThroughURL = urlString;
+    [self performSegueWithIdentifier:@"openClickThroughURLSegue" sender:self];
+}
+
+-(void) prepareForSegue:(UIStoryboardPopoverSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[SimpleWebViewController class]]) {
+        SimpleWebViewController *simpleWebViewController = (SimpleWebViewController *) segue.destinationViewController;
+        simpleWebViewController.clickThroughURL = self.clickThroughURL;
+    }
 }
 
 - (void)ad:(id<ANAdProtocol>)ad requestFailedWithError:(NSError *)error {

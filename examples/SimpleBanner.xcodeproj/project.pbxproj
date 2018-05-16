@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E4D1C9120ACC5CF0087170F /* SimpleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4D1C9020ACC5CF0087170F /* SimpleWebViewController.m */; };
 		6083C4161FBCA3DA00DED744 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6083C4151FBCA3D900DED744 /* AVKit.framework */; };
 		8A3EDB491D0873A200957227 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3EDB481D0873A200957227 /* WebKit.framework */; };
 		8AED80CD19DDA81C002F5D9F /* ANSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8AED80AC19DDA7C6002F5D9F /* ANSDKResources.bundle */; };
@@ -200,6 +201,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E4D1C8F20ACC5CF0087170F /* SimpleWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleWebViewController.h; sourceTree = "<group>"; };
+		0E4D1C9020ACC5CF0087170F /* SimpleWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleWebViewController.m; sourceTree = "<group>"; };
 		6083C4151FBCA3D900DED744 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		8A3EDB481D0873A200957227 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8A3EDB591D0873B200957227 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -285,25 +288,25 @@
 		8AED809C19DDA7C6002F5D9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8AED80AC19DDA7C6002F5D9F /* ANSDKResources.bundle */,
-				8AB3BC881B98A82D00CB4BA3 /* AppNexusSDK.framework */,
-				8AED80B819DDA7C6002F5D9F /* libANAdapterForGoogleAdMobSDK.a */,
-				8AED80BA19DDA7C6002F5D9F /* libANAdapterForMoPubSDK.a */,
 				8AED80AA19DDA7C6002F5D9F /* libANSDK.a */,
-				8AB3BC801B98A82D00CB4BA3 /* libANSDKAdColonyAdapter.a */,
-				8A4A99641E3FB1F000956FDE /* libANSDKAdMarvelAdapter.a */,
-				8AED80BC19DDA7C6002F5D9F /* libANSDKAmazonAdapter.a */,
-				8AB3BC841B98A82D00CB4BA3 /* libANSDKChartboostAdapter.a */,
-				8AED80B619DDA7C6002F5D9F /* libANSDKFacebookAdapter.a */,
+				8AED80AC19DDA7C6002F5D9F /* ANSDKResources.bundle */,
 				8AED80AE19DDA7C6002F5D9F /* libANSDKGoogleAdMobAdapter.a */,
-				8AB3BC7C1B98A82D00CB4BA3 /* libANSDKInMobiAdapter.a */,
 				8AED80B219DDA7C6002F5D9F /* libANSDKMillennialMediaAdapter.a */,
 				8AED80B419DDA7C6002F5D9F /* libANSDKMoPubAdapter.a */,
-				8A4A99661E3FB1F000956FDE /* libANSDKRubiconAdapter.a */,
-				8A4A99621E3FB1F000956FDE /* libANSDKSmartAdAdapter.a */,
+				8AED80B619DDA7C6002F5D9F /* libANSDKFacebookAdapter.a */,
+				8AED80BC19DDA7C6002F5D9F /* libANSDKAmazonAdapter.a */,
+				8AB3BC7C1B98A82D00CB4BA3 /* libANSDKInMobiAdapter.a */,
 				8AB3BC7E1B98A82D00CB4BA3 /* libANSDKVdopiaAdapter.a */,
+				8AB3BC801B98A82D00CB4BA3 /* libANSDKAdColonyAdapter.a */,
 				8AB3BC821B98A82D00CB4BA3 /* libANSDKVungleAdapter.a */,
+				8AB3BC841B98A82D00CB4BA3 /* libANSDKChartboostAdapter.a */,
 				8AB3BC861B98A82D00CB4BA3 /* libANSDKYahooAdapter.a */,
+				8AED80B819DDA7C6002F5D9F /* libANAdapterForGoogleAdMobSDK.a */,
+				8AED80BA19DDA7C6002F5D9F /* libANAdapterForMoPubSDK.a */,
+				8AB3BC881B98A82D00CB4BA3 /* AppNexusSDK.framework */,
+				8A4A99621E3FB1F000956FDE /* libANSDKSmartAdAdapter.a */,
+				8A4A99641E3FB1F000956FDE /* libANSDKAdMarvelAdapter.a */,
+				8A4A99661E3FB1F000956FDE /* libANSDKRubiconAdapter.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -368,6 +371,8 @@
 				FF2FD7BC19706A5D002CAD63 /* SimpleAppDelegate.m */,
 				FF2FD7C419706A5D002CAD63 /* SimpleViewController.h */,
 				FF2FD7C519706A5D002CAD63 /* SimpleViewController.m */,
+				0E4D1C8F20ACC5CF0087170F /* SimpleWebViewController.h */,
+				0E4D1C9020ACC5CF0087170F /* SimpleWebViewController.m */,
 			);
 			path = SimpleBanner;
 			sourceTree = "<group>";
@@ -651,6 +656,7 @@
 				FF2FD7B919706A5D002CAD63 /* main.m in Sources */,
 				FF2FD7BD19706A5D002CAD63 /* SimpleAppDelegate.m in Sources */,
 				FF2FD7C619706A5D002CAD63 /* SimpleViewController.m in Sources */,
+				0E4D1C9120ACC5CF0087170F /* SimpleWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,7 +757,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -784,7 +790,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -804,6 +810,7 @@
 					"$(PROJECT_DIR)/../sdk/**",
 				);
 				INFOPLIST_FILE = "SimpleBanner/SimpleBanner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "AN.${PRODUCT_NAME:rfc1034identifier}";
@@ -825,6 +832,7 @@
 					"$(PROJECT_DIR)/../sdk/**",
 				);
 				INFOPLIST_FILE = "SimpleBanner/SimpleBanner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "AN.${PRODUCT_NAME:rfc1034identifier}";
