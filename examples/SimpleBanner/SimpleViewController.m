@@ -49,6 +49,7 @@
     
     // Make a banner ad view.
     ANBannerAdView *banner = [ANBannerAdView adViewWithFrame:rect placementId:adID adSize:size];
+    banner.externalUid = @"123e4567e89b12da456426655440000";
     banner.rootViewController = self;
     banner.delegate = self;
     [self.view addSubview:banner];
