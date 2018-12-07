@@ -31,6 +31,8 @@
 
 @property (nonatomic, readwrite)  BOOL  allowSmallerSizes;
 
+@property (nonatomic, strong)  NSOperationQueue  *imageOperationQueue;
+
 @end
 
 
@@ -63,6 +65,7 @@
     
     if (self = [super init]) {
         self.customKeywords = [[NSMutableDictionary alloc] init];
+        self.imageOperationQueue = [NSOperationQueue new];
         
         [self setupSizeParametersAs1x1];
     }
@@ -254,7 +257,7 @@
             
         }];
         
-        [[NSOperationQueue mainQueue] addOperation:loadImageData];
+        [self.imageOperationQueue addOperation:loadImageData];
         return loadImageData;
     }
 }
